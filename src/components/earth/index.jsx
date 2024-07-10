@@ -65,7 +65,9 @@ export function Earth(props) {
           roughness={0.7}
           side={THREE.DoubleSide}
         />
-        {/* <OrbitControls
+        {/* 
+          //OrbitControls works at the center of the mesh and since postion is changed it doesnt work properly enough
+        <OrbitControls
           enableZoom={true}
           enablePan={true}
           enableRotate={true}
