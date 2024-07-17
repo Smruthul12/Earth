@@ -4,11 +4,11 @@ import { OrbitControls, Stars } from "@react-three/drei";
 import * as THREE from "three";
 import { TextureLoader } from "three";
 
-import EarthDayMap from "../../assets/textures/8k_earth_daymap.jpg";
-import EarthNormalMap from "../../assets/textures/8k_earth_normal_map.jpg";
-import EarthSpecularMap from "../../assets/textures/8k_earth_specular_map.jpg";
-import EarthCloudsMap from "../../assets/textures/8k_earth_clouds.jpg";
-import EarthNightMap from "../../assets/textures/8k_earth_nightmap.jpg";
+import EarthDayMap from "Earth_react-three-fiber/assets/textures/8k_earth_daymap.jpg";
+import EarthNormalMap from "Earth_react-three-fiber/assets/textures/8k_earth_normal_map.jpg";
+import EarthSpecularMap from "Earth_react-three-fiber/assets/textures/8k_earth_specular_map.jpg";
+import EarthCloudsMap from "Earth_react-three-fiber/assets/textures/8k_earth_clouds.jpg";
+import EarthNightMap from "Earth_react-three-fiber/assets/textures/8k_earth_nightmap.jpg";
 
 export function Earth(props) {
     const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(
