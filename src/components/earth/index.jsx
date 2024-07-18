@@ -4,11 +4,11 @@ import { OrbitControls, Stars } from "@react-three/drei";
 import * as THREE from "three";
 import { TextureLoader } from "three";
 
-import EarthDayMap from "Earth_react-three-fiber/assets/textures/8k_earth_daymap.jpg";
-import EarthNormalMap from "Earth_react-three-fiber/assets/textures/8k_earth_normal_map.jpg";
-import EarthSpecularMap from "Earth_react-three-fiber/assets/textures/8k_earth_specular_map.jpg";
-import EarthCloudsMap from "Earth_react-three-fiber/assets/textures/8k_earth_clouds.jpg";
-import EarthNightMap from "Earth_react-three-fiber/assets/textures/8k_earth_nightmap.jpg";
+import EarthDayMap from "../../assets/textures/8k_earth_daymap.jpg";
+import EarthNormalMap from "../../assets/textures/8k_earth_normal_map.jpg";
+import EarthSpecularMap from "../../assets/textures/8k_earth_specular_map.jpg";
+import EarthCloudsMap from "../../assets/textures/8k_earth_clouds.jpg";
+import EarthNightMap from "../../assets/textures/8k_earth_nightmap.jpg";
 
 export function Earth(props) {
     const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(
@@ -35,8 +35,8 @@ export function Earth(props) {
     });
 
     return <>
-        <ambientLight intensity={0.5} />
-      <pointLight color="#f6f3ea" position={[1, 0, 5]} intensity={5} />
+        <ambientLight intensity={0.25} />
+      <pointLight color="#f6f3ea" position={[1, 0, 2.5]} intensity={20} />
       <Stars
         radius={300}
         depth={60}
@@ -45,7 +45,7 @@ export function Earth(props) {
         saturation={0}
         fade={true}
       />
-      <mesh ref={cloudsRef} position={[0, 0, 3]}>
+      <mesh ref={cloudsRef} position={[0, 0, 0]}>
         <sphereGeometry args={[1.005, 32, 32]} />
         <meshPhongMaterial
           map={cloudsMap}
@@ -55,7 +55,7 @@ export function Earth(props) {
           side={THREE.DoubleSide}
         />
       </mesh>
-      <mesh ref={earthRef} position={[0, 0, 3]}>
+      <mesh ref={earthRef} position={[0, 0, 0]}>
         <sphereGeometry args={[1, 32, 32]} />
         <meshPhongMaterial specularMap={specularMap} />
         <meshStandardMaterial
@@ -65,7 +65,7 @@ export function Earth(props) {
           roughness={0.7}
           side={THREE.DoubleSide}
         />
-        {/* 
+        
           //OrbitControls works at the center of the mesh and since postion is changed it doesnt work properly enough
         <OrbitControls
           enableZoom={true}
@@ -75,7 +75,7 @@ export function Earth(props) {
           panSpeed={0.5}
           rotateSpeed={0.4}
           
-        /> */}
+        />
       </mesh>
     </>;
 }
